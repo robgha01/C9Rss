@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7ADE1ACF-920B-4C75-A63B-002BD8458425}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>C9Rss.Public.Domain</RootNamespace>
+    <AssemblyName>C9Rss.Public.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C9Rss.Public.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RssReader\BlogFeed.cs" />
+    <Compile Include="RssReader\C9RssModelManager.cs" />
+    <Compile Include="RssReader\Interfaces\IPagedView.cs" />
+    <Compile Include="RssReader\Model\Author.cs" />
+    <Compile Include="RssReader\Model\BlogItem.cs" />
+    <Compile Include="RssReader\Views\BlogModelViewer.cs" />
+    <Compile Include="RssReader\Views\BlogXmlViewer.cs" />
+    <Compile Include="Rss\Syndication\AtomXmlTextWriter.cs" />
+    <Compile Include="Rss\Syndication\FeedBase.cs" />
+    <Compile Include="RssReader\Model\BlogFeedItem.cs" />
+    <Compile Include="RssReader\Views\BlogFeedViewer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rss\Behaviors\Read\UrlReader.cs" />
+    <Compile Include="Rss\Behaviors\View\SyndicationFeedViewer.cs" />
+    <Compile Include="Rss\Behaviors\View\ViewerBase.cs" />
+    <Compile Include="Rss\Behaviors\View\XmlViewer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rss\Helpers\RssHelper.cs" />
+    <Compile Include="Rss\Helpers\XmlHelper.cs" />
+    <Compile Include="Rss\Interfaces\Behaviors\IViewBehavior.cs" />
+    <Compile Include="Rss\Interfaces\Behaviors\IReadBehavior.cs" />
+    <Compile Include="RssReader\C9RssFeedManager.cs" />
+    <Compile Include="Rss\Interfaces\IHtmlSafe.cs" />
+    <Compile Include="Rss\Interfaces\Helpers\IRssHelper.cs" />
+    <Compile Include="Rss\Interfaces\Helpers\IXmlHelper.cs" />
+    <Compile Include="Rss\RssManager.cs" />
+    <Compile Include="SiteConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C9Rss.Public.Utilities\C9Rss.Public.Utilities.csproj">
+      <Project>{C582DB84-FA54-40A7-9189-FC49B90B8F70}</Project>
+      <Name>C9Rss.Public.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
